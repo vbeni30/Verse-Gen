@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Bible Project";
+  src: url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+}
+
+body {
+  font-family: "Crimson Text", serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hand-drawn border effect */
+.border-hand {
+  position: relative;
+}
+
+.border-hand::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px solid black;
+  border-radius: 2px;
+}
+
+/* Comic panel corners */
+.panel-corner::before,
+.panel-corner::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 2px solid black;
+}
+
+.panel-corner::before {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.panel-corner::after {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Hand-drawn button effect */
+.btn-hand {
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.btn-hand:hover {
+  transform: scale(1.02);
+}
+
+.btn-hand::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: -2px;
+  bottom: -2px;
+  background: black;
+  z-index: -1;
+}
+
